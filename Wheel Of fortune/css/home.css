@@ -21,7 +21,7 @@ body {
 .wrapper {
 	width: 34rem;
     max-width: none;
-    margin: 6rem auto;
+    margin: 0 auto;
     padding-right: 15px;
     padding-left: 15px;
 }
