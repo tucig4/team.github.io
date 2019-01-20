@@ -1,15 +1,49 @@
-.gg>img{
+body {
+	overflow: hidden;
+	background: #e3f9f9
+}
+.wheelButton>img{
     position: absolute;
-    top:233px;
-    left: 255px;
-    width: 3%;
-    height: 7%;
+    top: 15rem;
+    left: 15rem;
+    width: 4rem;
+    height: 6.8rem;
+    cursor: pointer;     /* Khi Click vào sẽ hiện con trỏ hình bàn tay (người xem sẽ hiểu là button) */
+    z-index: 3;
 }
-.lucky>img{
+.luckyWheel {
     position: relative;
-    animation: spin 2s infinite ease-out;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) 5s; /* Quay nhanh dần -> chậm dần */
+    width: 34rem;
+    height: 34rem;
+    z-index: 1
 }
-@keyframes spin {
-    0% { transform: rotate(0deg);}
-    100% { transform: rotate(360deg);}
-} 
+.wrapper {
+	width: 34rem;
+    max-width: none;
+    margin: 6rem auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.main {
+	position: relative;
+}
+.wheel {
+	margin: 0 auto;
+    padding-top: 3rem;
+}
+
+.anhhuy img {
+	width: 40rem;
+    position: absolute;
+    z-index: 5;
+    top: 1rem;
+    left: -29rem;
+}
+.anhtung img {
+	width: 60rem;
+    position: absolute;
+    z-index: 1;
+    top: -13rem;
+    left: 15rem;
+}

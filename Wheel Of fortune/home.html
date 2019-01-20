@@ -4,17 +4,143 @@
         <title>Wheel Of Fortune</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="css/home.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <div class="wrapper">
-            <div class="lucky"><img src="img/luckyWheel3.png"></div>
-            <div class="gg"><img src="img/ggggg.png"></div>
+            <div class="main">
+                <div class="wheel">
+                    <div class="luckyWheel"><img src="img/luckyWheel3.png"></div>
+                    <div class="wheelButton"><img src="img/ggggg.png"></div>
+                </div>
+                <div class="anhhuy">
+                    <img src="anhhuy.png">
+                </div>
+                <div class="anhtung">
+                    <img src="anhtung.png">
+                </div>
+            </div>        
+        </div>     
+
+
+             <div class="popup">
+        <div class="popup__container">
+            <div class="popup__emotion">
+                <i class="fas fa-meh"></i>
+            </div>
+            <p class="popup__note"></p>
+        </div>
+           <div class="congratulation">
+        <div class="congratulation__container">
+            <div class="congratulation__close">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="congratulation__emotion">
+                <i class="fas fa-smile"></i>
+            </div>
+            <p class="congratulation__note"></p>
+        </div>
+        </div>
+    </div>
             <!-- <button onclick="myFunction()">Try it</button>
             <script>
             function myFunction() {
             document.getElementById("demo").innerHTML = Math.random();
             }
             </script> -->
-        </div>
+
+        <script type="text/javascript">
+        $(document).ready(function () {
+            var value = 0;
+            var countClicked = 0;
+            var clicked = false;
+            function getPosition(position) {
+            /*    if (position <= 15) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 150 ĐIỂM');
+                } else if (position <= 30) {
+                    alert('BẠN ĐÃ QUAY VÀO Ô MẤT LƯỢT');
+                } else if (position <= 45) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 100 ĐIỂM');
+                } else if (position <= 60) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 1000 ĐIỂM');
+                } else if (position <= 75) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC Ô NHÂN ĐÔI ĐIỂM');
+                } else if (position <= 90) {
+                    alert('BẠN ĐÃ QUAY VÀO Ô CHIA ĐÔI ĐIỂM');
+                } else if (position <= 105) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 500 ĐIỂM');
+                } else if (position <= 120) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 300 ĐIỂM');
+                } else if (position <= 135) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY VÀO Ô MAY MẮN');
+                } else if (position <= 150) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 600 ĐIỂM');
+                } else if (position <= 165) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY VÀO Ô PHẦN THƯỞNG');
+                } else if (position <= 180) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 200 ĐIỂM');
+                } else if (position <= 195) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 300 ĐIỂM');
+                } else if (position <= 210) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY VÀO Ô THÊM LƯỢT');
+                } else if (position <= 225) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 1500 ĐIỂM');
+                } else if (position <= 240) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 600 ĐIỂM');
+                } else if (position <= 255) {
+                    alert('BẠN ĐÃ QUAY VÀO Ô MẤT LƯỢT');
+                } else if (position <= 270) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 700 ĐIỂM');
+                } else if (position <= 285) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 800 ĐIỂM');
+                } else if (position <= 300) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY VÀO Ô MAY MẮN');
+                } else if (position <= 315) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 900 ĐIỂM');
+                } else if (position <= 330) {
+                    alert('BẠN ĐÃ QUAY VÀO Ô CHIA ĐÔI ĐIỂM');
+                } else if (position <= 345) {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY ĐƯỢC 1100 ĐIỂM');
+                } else {
+                    alert('CHÚC MỪNG BẠN ĐÃ QUAY VÀO Ô PHẦN THƯỞNG');
+                } 
+                */   
+            clicked = false;
+            countClicked = 0;
+    }
+    $('.wheelButton').click( function () {
+        if (clicked == true) {
+            countClicked++;
+            if (countClicked <= 2) {
+    
+            }
+            else if (countClicked <= 40)
+                $('.popup__note').text("");
+            else
+                $('.popup__note').text("");
+            if (!$('.popup').hasClass('active'))
+                $('.popup').addClass('active');
+        } else {
+            let random = Math.floor((Math.random(0,3) * 21600) + 7);
+            value += random;
+            $(".luckyWheel").css("transform", `rotate(${random}deg)`);
+            setTimeout(() => {
+                //Chia lấy dư cho 360 để lấy lượng quay không hoàn thành một vòng 360deg
+                getPosition(random % 360);
+            }, 5000);
+        }
+        clicked = true;
+    })
+    $('.congratulation__close').click(function () {
+        $('.congratulation').fadeOut();
+    })
+    $('.congratulation').click(function (event) {
+        if (event.target != this)
+            return;
+        $(this).fadeOut();
+    })
+})
+
+        </script>
     </body>
 </html>
